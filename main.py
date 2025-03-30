@@ -45,9 +45,14 @@ def scissors(compter_choices, user_choices, computer, user):
 
 
 while playAgain == "yes":
+    list_choices = ["rock", "paper", "scissors"]
+    compter_choices = random.choice(list_choices)
 
-    compter_choices = random.choice(["rock", "paper", "scissors"])
-    user_choices = input("Choose: rock, paper, scissors :").lower()
+    user_choices = None
+
+    while user_choices not in list_choices:
+        print("Please choose from the options list.")
+        user_choices = input("Choose: rock, paper, scissors :").lower()
 
     if compter_choices == user_choices:
         print(
@@ -64,6 +69,6 @@ while playAgain == "yes":
     playAgain = input(
         "Play again? (yes to continue, 'q' to quit): ").lower()
 if computer > user:
-    print("The machines won! 👾")
+    print("\nThe machines won! 👾")
 else:
-    print("The man won! 🧔‍♂️")
+    print("\nThe man won! 🧔‍♂️")
